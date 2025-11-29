@@ -1,0 +1,17 @@
+name: customer_historical_checkpoint
+config_version: 1.0
+template_name:
+class_name: Checkpoint
+run_name_template: "%Y%m%d-%H%M%S-customer-validation"
+validations:
+  - batch_request:
+      datasource_name: pandas_datasource  
+      data_asset_name: customers
+    expectation_suite_name: customer_validation_suite
+action_list:
+  - name: store_validation_result
+    action:
+      class_name: StoreValidationResultAction
+  - name: update_data_docs
+    action:
+      class_name: UpdateDataDocsAction
