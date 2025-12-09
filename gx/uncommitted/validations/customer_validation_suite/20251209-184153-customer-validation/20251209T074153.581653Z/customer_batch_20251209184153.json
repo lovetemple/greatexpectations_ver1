@@ -1,0 +1,436 @@
+{
+  "id": null,
+  "meta": {
+    "active_batch_definition": {
+      "batch_identifiers": {
+        "dataframe": "<DATAFRAME>"
+      },
+      "data_asset_name": "customers",
+      "data_connector_name": "fluent",
+      "datasource_name": "pandas_datasource"
+    },
+    "batch_markers": {
+      "ge_load_time": "20251209T074153.577403Z",
+      "pandas_data_fingerprint": "8eec277959d156ee5a5e226bce327e63"
+    },
+    "batch_spec": {
+      "batch_data": "PandasDataFrame"
+    },
+    "checkpoint_name": null,
+    "expectation_suite_name": "customer_validation_suite",
+    "great_expectations_version": "1.8.1",
+    "run_id": {
+      "run_name": "20251209-184153-customer-validation",
+      "run_time": "2025-12-09T18:41:53.581653+11:00"
+    },
+    "validation_time": "20251209T074153.581664Z"
+  },
+  "results": [
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "753ae6ba-5ce4-4f3e-8b34-14dcd8b7a3ec",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "value": 5
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_table_column_count_to_equal"
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 5
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "389547c7-066c-485c-a103-6fcae732264a",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "max_value": 1000,
+          "min_value": 5
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_table_row_count_to_be_between"
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 6
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "6d826d8a-987a-4ea2-90a6-7b6a407ad305",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "customer_id"
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 6,
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "a0bd70b6-695a-4664-9926-79705ac49754",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "customer_id"
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_be_unique"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 6,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "b0e2679c-a230-49f6-9528-47c32b3aab73",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "customer_id",
+          "type_": "int64"
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_be_of_type"
+      },
+      "meta": {},
+      "result": {
+        "observed_value": "int64"
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "ec3b22ed-e338-4e48-b571-ee3dfa23d019",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "email"
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 6,
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "d9b6269b-da1b-41fb-be51-7298d5934416",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "email",
+          "regex": "^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$"
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_match_regex"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 6,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "7871c4ab-c886-4e62-9b80-0a456f2957ab",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "email"
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_be_unique"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 6,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "99d4b2b3-f433-4509-b000-2973de0a1061",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "signup_date"
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 6,
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "3aff9d7e-bca5-4e78-9ca1-ff6925b9dce3",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "signup_date",
+          "strftime_format": "%Y-%m-%d"
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_match_strftime_format"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 6,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "a38f68dc-3705-42ff-8ac0-dcbe41971eb7",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "orders"
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 6,
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "c0fc1617-de98-4709-ab70-9a08c9b5e0d1",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "orders",
+          "max_value": 100.0,
+          "min_value": 0.0
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_be_between"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 6,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "16791ebe-b026-432e-88b6-88ce2bf36eea",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "orders",
+          "max_value": 10.0,
+          "min_value": 0.0
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_mean_to_be_between"
+      },
+      "meta": {},
+      "result": {
+        "observed_value": 3.5
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "d0daab52-a9c6-4f48-baef-48cf79de975d",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "avg_order_value"
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_not_be_null"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 6,
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0
+      },
+      "success": true
+    },
+    {
+      "exception_info": {
+        "exception_message": null,
+        "exception_traceback": null,
+        "raised_exception": false
+      },
+      "expectation_config": {
+        "id": "45333e42-1155-4e37-8e24-485700eec9fb",
+        "kwargs": {
+          "batch_id": "pandas_datasource-customers",
+          "column": "avg_order_value",
+          "max_value": 500.0,
+          "min_value": 0.0
+        },
+        "meta": {},
+        "severity": "critical",
+        "type": "expect_column_values_to_be_between"
+      },
+      "meta": {},
+      "result": {
+        "element_count": 6,
+        "missing_count": 0,
+        "missing_percent": 0.0,
+        "partial_unexpected_list": [],
+        "unexpected_count": 0,
+        "unexpected_percent": 0.0,
+        "unexpected_percent_nonmissing": 0.0,
+        "unexpected_percent_total": 0.0
+      },
+      "success": true
+    }
+  ],
+  "statistics": {
+    "evaluated_expectations": 15,
+    "success_percent": 100.0,
+    "successful_expectations": 15,
+    "unsuccessful_expectations": 0
+  },
+  "success": true,
+  "suite_name": "customer_validation_suite",
+  "suite_parameters": {}
+}

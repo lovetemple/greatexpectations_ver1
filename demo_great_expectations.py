@@ -61,8 +61,8 @@ def main():
         print(f"✓ Using existing suite: {suite_name}")
     
 
-    # Register custom expectation before creating validator
-    from order_count_reasonable_expectation import ExpectColumnValuesToBeOrderCountReasonable
+    # Import generic custom logic helper
+    from gx.plugins.expectations.order_count_reasonable_expectation import apply_custom_logic_to_column
 
 
     # Step 7: Create a Validator
@@ -136,7 +136,6 @@ def main():
     # Add to validator and suite
     # Directly instantiate and validate custom expectation
     # Robust custom logic validation using helper function
-    from gx.plugins.expectations.order_count_reasonable_expectation import apply_custom_logic_to_column
     # Example: make this generic for any column and logic
     column_name = "orders"
     logic_fn = lambda x: int(x) >= 1 and int(x) <= 6  # This can be changed as needed
