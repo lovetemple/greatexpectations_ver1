@@ -60,6 +60,11 @@ def main():
         suite = context.suites.get(name=suite_name)
         print(f"✓ Using existing suite: {suite_name}")
     
+
+    # Register custom expectation before creating validator
+    from order_count_reasonable_expectation import ExpectColumnValuesToBeOrderCountReasonable
+
+
     # Step 7: Create a Validator
     print("\n[7] Creating validator...")
     validator = context.get_validator(
@@ -127,12 +132,17 @@ def main():
     )
     print(f"   • Orders between 0-100: {'✓ PASS' if result.success else '✗ FAIL'}")
     
-    result = validator.expect_column_mean_to_be_between(
-        column="orders",
-        min_value=0,
-        max_value=10
-    )
-    print(f"   • Average orders 0-10: {'✓ PASS' if result.success else '✗ FAIL'}")
+
+    # Add to validator and suite
+    # Directly instantiate and validate custom expectation
+    # Robust custom logic validation using helper function
+    from gx.plugins.expectations.order_count_reasonable_expectation import apply_custom_logic_to_column
+    # Example: make this generic for any column and logic
+    column_name = "orders"
+    logic_fn = lambda x: int(x) >= 1 and int(x) <= 6  # This can be changed as needed
+    valid_mask = apply_custom_logic_to_column(df[column_name], logic_fn)
+    percent_valid = valid_mask.mean() * 100
+    print(f"   • {column_name} custom logic (lambda): {'✓ PASS' if percent_valid >= 95 else '✗ FAIL'} ({percent_valid:.1f}% valid)")
     
     # Average order value expectations
     print("\n   Order Value Validations:")
