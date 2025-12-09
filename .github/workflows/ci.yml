@@ -26,3 +26,9 @@ jobs:
       - name: Run demo script
         run: |
           python3 demo_great_expectations.py
+
+      - name: Upload Data Docs HTML
+        uses: actions/upload-artifact@v4
+        with:
+          name: data-docs-html
+          path: gx/uncommitted/data_docs/local_site/
